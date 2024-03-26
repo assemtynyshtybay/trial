@@ -1,0 +1,107 @@
+@font-face {
+  font-family: "Montserrat";
+  src: url(assets/fonts/Montserrat/Montserrat-VariableFont_wght.ttf);
+  font-weight: 400;
+}
+
+:root {
+  --bg-light: #f4f4f4;
+  --bg-dark: #fff;
+  --grey: #b1a7a763;
+  --btn-color: rgb(148, 148, 188);
+  --btn-text: rgb(46, 45, 45);
+  --text-light: #232323;
+  --box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  --transition: 0.3s;
+  --dark-blue: #5a3a7c;
+  --pg-back: #ffffff;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  transition: all var(--transition);
+  font-family: "Montserrat", serif;
+  font-size: 16px;
+}
+
+.app {
+  width: 100%;
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+.cont-404 {
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--pg-back);
+}
+
+.cont-404 img {
+  height: 70vh;
+  width: 50vw;
+}
+
+.dark {
+  --bg-light: #232323;
+  --bg-dark: #000;
+  --btn-color: rgb(29, 29, 78);
+  --btn-text: rgb(234, 234, 234);
+  --grey: #524a4a63;
+  --text-light: #fafafa;
+  --box-shadow: rgba(216, 177, 177, 0.445) 0px 4px 12px;
+  --dark-blue: #3cbfc5;
+  --pg-back: #262a37;
+}
+
+[data-title]:hover:after {
+  background-color: var(--grey);
+  text-align: center;
+  color: var(--text-light);
+  font-size: 1rem;
+  opacity: 100;
+  transition: all 0.1s ease 0.1s;
+  visibility: visible;
+  cursor: pointer;
+  z-index: 19999;
+}
+[data-title]:after {
+  content: attr(data-title);
+  position: absolute;
+  bottom: -2em;
+  right: 1em;
+  padding: 4px 4px 4px 8px;
+  white-space: nowrap;
+  border-radius: 5px;
+  box-shadow: var(--box-shadow);
+  opacity: 0;
+  z-index: 19999;
+  visibility: hidden;
+  cursor: pointer;
+}
+[data-title] {
+  position: relative;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: var(--grey);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
